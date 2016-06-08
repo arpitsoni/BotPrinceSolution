@@ -1,0 +1,54 @@
+<!--
+Developer Name: Arpit Soni
+Description: Solve bot saves princess-2 
+URL: https://www.hackerrank.com/challenges/saveprincess2
+-->
+
+<html>
+<body>
+<script type="text/javascript">
+
+var n = 5; // dimention
+var c = 3; // column
+var r = 2; // row
+var grid = [['-','-','-','-','-'],['-','-','-','-','-'],['p','-','-','m','-'],['-','-','-','-','-'],['-','-','-','-','-']];
+
+
+function nextMove( n, c, r, grid){
+  var i, j, up, left;
+  var princess = [];
+
+  /* find the princess */
+  for (i = 0; i < n; ++i) {
+    for (j = 0; j < n; ++j) {
+      if (grid[i][j] == 'p') {
+        princess[0] = i;
+        princess[1] = j;
+      }
+    }
+  }
+
+  if ((up = princess[0] - r) < 0) {
+    document.write("UP\n");
+    return;
+  } else if (up > 0) {
+    document.write("DOWN\n");
+    return;
+  }
+
+
+  if ((left = princess[1] - c) < 0) {
+    document.write("LEFT\n");
+    return;
+  } else if (left > 0) {
+    document.write("RIGHT\n");
+    return;
+  }
+}
+
+nextMove(n, c, r, grid);
+
+</script>
+</body>
+
+</html>

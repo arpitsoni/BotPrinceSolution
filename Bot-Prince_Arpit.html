@@ -1,0 +1,59 @@
+<!--
+Developer Name: Arpit Soni
+Description: Solve bot saves princess
+URL: https://www.hackerrank.com/challenges/saveprincess
+-->
+
+<html>
+<body>
+<script type="text/javascript">
+
+var dimension = 3;
+var grid = [['-','-','-'],['-','m','-'],['p','-','-']];
+
+
+function displayPathtoPrincess(dimension, grid)
+{
+    
+   var i, j, up, left;
+   var bot = [];
+   var princess = [];
+
+  /* find bot & princess */
+  for(i = 0; i < dimension; ++i) {
+    for(j = 0; j < dimension; ++j) {
+      if (grid[i][j] == 'm') {
+        bot[0] = i;
+        bot[1] = j;
+      }
+      if (grid[i][j] == 'p') {
+        princess[0] = i;
+        princess[1] = j;
+      }
+    }
+  }
+    
+    if ((up = princess[0] - bot[0]) < 0) {
+    for(; up < 0; ++up)
+      document.write("UP\n");
+  } else {
+    for(; up > 0; --up)
+      document.write("DOWN\n");
+  }
+
+  if ((left = princess[1] - bot[1]) < 0) {
+    for(; left < 0; ++left)
+      document.write("LEFT\n");
+  } else {
+    for(; left > 0; --left)
+      document.write("RIGHT\n");
+  }
+
+}
+
+displayPathtoPrincess(dimension,grid);
+
+</script>
+</body>
+
+</html>
